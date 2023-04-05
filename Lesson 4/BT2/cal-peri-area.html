@@ -12,12 +12,14 @@
 
         inputRadius = prompt("Nhập bán kính đường tròn: ")
 
-        let Peri = (2*inputRadius*Math.PI).toFixed(2);
+        let Radius = parseInt(inputRadius);
+
+        let Peri = (2*Radius*Math.PI).toFixed(2);
         document.write("Chu vi đường tròn là :" + Peri);
 
         document.write('<br/>');
 
-        let Area = (inputRadius*inputRadius*Math.PI).toFixed(2);
+        let Area = (Radius*Radius*Math.PI).toFixed(2);
         document.write("Diện tích hình tròn là: " + Area);
 
     </script>

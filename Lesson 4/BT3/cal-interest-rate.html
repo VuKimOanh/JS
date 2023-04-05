@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT3</title>
+</head>
+<body>
+    <script>
+        let inputLoanAmount;
+        let inputInterestRate;
+        let inputNumberYear;
+
+
+        inputLoanAmount= prompt('Nhập số tiền vay:');
+        inputInterestRate = prompt('Nhập lãi suất ngân hàng (%):');
+        inputNumberYear = prompt('Thời gian đã vay ngân hàng (theo số năm): ');
+
+        let loanAmount= parseFloat(inputLoanAmount);
+        let interestRate= parseFloat(inputInterestRate);
+        let numberYear= parseInt(inputNumberYear);
+
+        let Interest = loanAmount + loanAmount*(interestRate/100)*numberYear ;
+        let formattedInterest = Interest.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        document.write("Sau " + numberYear + " năm với lãi suất " + interestRate + "%, số tiền lãi phải trả là: " + formattedInterest);
+    </script>
+</body>
+</html>

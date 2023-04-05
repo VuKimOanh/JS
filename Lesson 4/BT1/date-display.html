@@ -16,7 +16,11 @@
         inputMonth = prompt("Nhập tháng: ");
         inputDay = prompt("Nhập ngày: ");
 
-        let BirthDay = inputDay  + '-'+ inputMonth +'-'+ inputYear;
+        let Year = parseInt(inputYear);
+        let Month = parseInt(inputMonth);
+        let Day = parseInt(inputDay);
+
+        let BirthDay = Day  + '-'+ Month +'-'+ Year;
         document.write("Ngày sinh nhật là :" + BirthDay);
 
     </script>
