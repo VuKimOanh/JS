@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT2</title>
+</head>
+<body>
+    <script>
+        let inputRadius;
+
+        inputRadius = prompt("Nhập bán kính đường tròn: ")
+
+        let Peri = (2*inputRadius*Math.PI).toFixed(2);
+        document.write("Chu vi đường tròn là :" + Peri);
+
+        document.write('<br/>');
+
+        let Area = (inputRadius*inputRadius*Math.PI).toFixed(2);
+        document.write("Diện tích hình tròn là: " + Area);
+
+    </script>
+    
+</body>
+</html>
