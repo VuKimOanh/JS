@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domo</title>
+</head>
+<body>
+    <label>Nhập số</label> <br>
+    <input type="number" id ="addNumber" name="addNumber" value="number">
+    <button type="button" onclick="checkNumber();">
+        Kiểm tra
+    </button>
+    <p id="result"></p>
+    <script>
+        function checkNumber(){
+            let addNumber = document.getElementById("addNumber").value;
+            if (/^\d+$/.test(addNumber)){
+                let number = parseInt (addNumber);
+                if (number % 2 == 0) {
+                    document.getElementById("result").innerHTML = "Số " + number + " là số chẵn";
+                } else {
+                    document.getElementById("result").innerHTML = "Số " + number + " là số lẻ";
+                }
+            } 
+            else {
+                document.getElementById("result").innerHTML="Vui lòng nhập một số nguyên";
+            }
+        }
+    </script>
+</body>
+</html>

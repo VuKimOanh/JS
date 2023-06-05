@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT2</title>
+    <style>
+        div {
+            margin-bottom: 10px;
+        }
+        .submit {
+            background-color: rgb(255, 255, 255);
+            border: 0.5px solid black;
+            border-radius: 5px
+        }
+        .container {
+            margin:auto;
+            margin-top: 30px;
+            width:13%;
+        }
+        form {
+            border: 2px solid black; 
+            padding: 10px; 
+            border-radius: 5px; 
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div class="container">
+        <form action="#" get="post">
+            <div >
+            <label for="fname">Họ và tên:</label><br>
+            <input type="texr" name="fname"><br>
+            </div>
+            <div>
+            <label for="email">Email:</label><br>
+            <input type="email" name="email"><br>
+            </div>
+            <div>
+            <label for="telephone">Số điện thoại:</label><br>
+            <input type="number" name="telephone"><br>
+            </div>
+            <div>
+            <label for="gender">Giới tính:</label><br>
+            <input type="radio" name="gender" value="male">Nam</input>
+            <input type="radio" name="gender" value="gender">Nữ</input><br>
+            </div>
+            <div>
+            <input class="submit" type="submit" name="summit" value="Đăng ký">
+            </div>
+        </form>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT1</title>
+</head>
+<body>
+    <script>
+        let inputYear;
+        let inputMonth;
+        let inputDay;
+
+        inputYear = prompt("Nhập năm: ");
+        inputMonth = prompt("Nhập tháng: ");
+        inputDay = prompt("Nhập ngày: ");
+
+        let Year = parseInt(inputYear);
+        let Month = parseInt(inputMonth);
+        let Day = parseInt(inputDay);
+
+        let BirthDay = Day  + '-'+ Month +'-'+ Year;
+        document.write("Ngày sinh nhật là :" + BirthDay);
+
+    </script>
+</body>
+</html>

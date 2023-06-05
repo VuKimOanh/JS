@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT3</title>
+    <style>
+        .body-background {
+        background-color: #dcf9f9;
+        }
+
+        .background-container {
+         background-color: #ffffff;
+         margin-top: 50px;
+         padding: 10px;
+         width: 354px;
+         height: 185px;
+         margin:auto;
+        }
+        .text-center {
+            text-align: center;
+            background-color: coral;
+            color:#e4e4e4;
+        }
+        .container {
+            width: 354px;
+            background-color: rgb(250, 250, 250);
+            border: 0.5px solid black;
+            
+        }
+        .hobby-user{
+            color:blue;
+        }
+        .hobby{
+            vertical-align: top;
+            padding-top: 5px;
+        }
+        .hobby-info{
+            color:coral;
+        }
+
+    </style>
+</head>
+<body class="body-background">
+    <div class="background-container">
+    <div class="container">
+        <form action="#" method="post">
+                <table>
+                    <tr>
+                        <td colspan="2" class="text-center">SỞ THÍCH CỦA BẠN</td>
+                    </tr>
+                    <tr>
+                        <td class="hobby-user">Họ và tên</td>
+                        <td>
+                            <input type="text" class='box-shadow' name="fullname"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hobby-user">Email</td>
+                        <td>
+                            <input type="email" name="email"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="hobby-user hobby">Sở thích</td>
+                        <td class="hobby-info">
+                            <table width="100%">
+                                <tr >
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            name="hobby"
+                                            value="sport"
+                                        />
+                                        Thể thao
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            name="hobby"
+                                            value="music"
+                                        />
+                                        Âm nhạc
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            name="hobby"
+                                            value="reading"
+                                        />
+                                        Đọc sách
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            name="hobby"
+                                            value="websurfing"
+                                        />
+                                        Lướt web
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            name="hobby"
+                                            value="game"
+                                        />
+                                        Chơi game
+                                    </td>
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            name="hobby"
+                                            value="movies"
+                                        />
+                                        Điện ảnh
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input
+                                            type="checkbox"
+                                            name="hobby"
+                                            value="travel"
+                                        />
+                                        Du lịch
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td class="hobby-sub">
+                            <input type="submit" value="Gửi thông tin" />
+                            <input type="reset" value="Nhập lại" />
+                        </td>
+                    </tr>
+                </table>
+        </form>
+    </div>
+    </div>
+    </body>
+</html>
+<br>
+<br>
+<hr>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #input_padding{
+            width: 50%;
+            padding: 20px;
+
+        }
+    </style>
+</head>
+<body>
+    <form action="#" method="post">
+        <form>
+            <table>
+                <tr>
+                    <td colspan="2">ĐĂNG KÝ HỌC VIÊN</td>    
+                </tr>
+                <tr>
+                    <td>Họ và tên</td>
+                    <td>
+                        <input type="text" name="fullname"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ngày sinh</td>
+                    <td>
+                        <input type="date" name="birthday"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Giới tính</td>
+                    <td>
+                        <table>
+                        <tr>
+                            <td>
+                                <input 
+                                type="radio" 
+                                name="nam"/>
+                                Nam
+                            </td>
+                            <td>
+                                <input 
+                                type="radio" 
+                                name="nu"/>
+                                Nữ
+                            </td>
+                        </tr> 
+                        </table>                      
+                    </td>
+                </tr>
+                <tr>
+                    <td>Địa chỉ</td>
+                    <td >
+                        <input type="text" id="input_padding" name="address" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Lớp</td>
+                    <td>
+                        <select >
+                            <option value="-Chọn lớp-">-Chọn lớp-</option>
+                            <option value="Lớp B">Lớp B</option>
+                            <option value="Lớp C">Lớp C</option>
+                            <option value="Lớp D">Lớp D</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="email" name="email"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Điện thoại</td>
+                    <td>
+                        <input type="number" name="telephone"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Đăng ký" />
+                        <input type="reset" value="Nhập lại" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+</body>
+</html>
