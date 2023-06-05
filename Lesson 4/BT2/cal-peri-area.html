@@ -8,21 +8,64 @@
 </head>
 <body>
     <script>
-        let inputRadius;
+        // let inputRadius;
 
-        inputRadius = prompt("Nhập bán kính đường tròn: ")
+        // inputRadius = prompt("Nhập bán kính đường tròn: ")
 
-        let Radius = parseInt(inputRadius);
+        // let Radius = parseInt(inputRadius);
 
-        let Peri = (2*Radius*Math.PI).toFixed(2);
-        document.write("Chu vi đường tròn là :" + Peri);
+        // let Peri = (2*Radius*Math.PI).toFixed(2);
+        // console.log("Chu vi đường tròn là :" + Peri);
 
-        document.write('<br/>');
+        // let Area = (Radius*Radius*Math.PI).toFixed(2);
+        // console.log("Diện tích hình tròn là: " + Area);
 
-        let Area = (Radius*Radius*Math.PI).toFixed(2);
-        document.write("Diện tích hình tròn là: " + Area);
+
+        // const PI = 3.24;
+        // let radius = 5;
+        // let c = 2 * PI* radius;
+        // let message = `chu vi của hình tròn là : ${c} m` ;
+        // console.log (message);
+        //khai báo tên biến game con rắn
+        // các cấp độ, chiều dài bắt đầu
+        // biến là số lượt chơi, số lượt chơi còn lại
+        // số điểm, chiều dài bắt đầu, chiều dài tối đa
+        // kích thước của màn hình chơi, chiều dài khi ăn 1 điểm
+        // vị trí toạ đọ bắt đầu, các nút di chuyển (4 nút dưới dạng số)
+
+        const LEVEL = 1; // cấp độ
+        const LIVES = 3; //số luột chơi bắt đầu
+        let remainingLives =  LIVES -1; // số lượt chơi còn lại
+        const STARLENGTH= 10; // chiều dài bắt đầu
+        let score = 1; // số điểm
+        const STARMAXLENGTH = 10; // chiều dài  tối đa
+        let squareSize = startMaxLength +1; // chiều dài khi ăn 1 điểm
+        const SCREENWIDTH = 400; // kích thước của màn hình chơi
+        let startPosX = 5;// vị trí toạ độ bắt đầu
+        let startPosY = 5;
+        const DIRECTION_UP = 1; 
+        const DIRECTION_DOWN = 2;
+        const DIRECTION_LEFT = 3;
+        const DIRECTION_RIGHT = 4;
+
+        // hằng số viết hoa vd: HANG_SO
+     
+        let isDelete = confirm ('Delete hiss product');
+        console.log(isDelete);
+
+        
+        document.write ('1');
+        let bool = true ; //false
+        let number1 =1;
+        let number2 =1;
+        console.log (String (number1) + String(number2));
+
+        let tr = 'abc';
+        let number3 ='3';
+        console.log(Number(str), Number(number3)); // kết quả trả về NaN 3
 
     </script>
     
 </body>
 </html>
+
