@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<br lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Price Lookup</title>
+</head>
+<br>
+    <h1>Fruit Price Lookup</h1>
+    <form>
+        <label for="fruitInput">Fruit Name:</label>
+        <input type="text" id="fruitInput">
+        <button type="button" onclick="lookupPrice()">View Price</button>
+    </form>
+    <br>
+    <div id="result"></div>
+
+    <script>
+        function lookupPrice() {
+            let fruit = document.getElementById("fruitInput").value;
+            let price;
+
+            switch (fruit) {
+                case "Ổi":
+                case "Dưa Hấu":
+                    price = 20000;
+                    break;
+                case "Táo":
+                case "Xoài":
+                    price = 30000;
+                    break;
+                case "Cam":
+                case "Chôm Chôm":
+                    price = 40000;
+                    break;
+                case "Măng Cụt":
+                    price = 50000;
+                    break;
+                default:
+                    price = "Unknown";
+                    break;
+            }
+
+            let resultElement = document.getElementById("result");
+            if (price === "Unknown") {
+                resultElement.innerHTML = "Unknown fruit";
+            } else {
+                resultElement.innerHTML = `The price of ${fruit} is ${price} VNĐ/kg`;
+            }
+        }
+    </script>
+</body>
+</html>
