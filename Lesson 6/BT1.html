@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="calculatorForm">
+            <input type="text" id="num1" placeholder="Nhập số thứ nhất" /><br />
+            <input type="text" id="num2" placeholder="Nhập số thứ hai" /><br />
+            <button type="button" onclick="add()">+</button>
+            <button type="button" onclick="subtract()">-</button>
+            <button type="button" onclick="multiply()">*</button>
+            <button type="button" onclick="divide()">/</button>
+        </form>
+        <div id="result"></div>
+    </div>
+
+    <script src="BT1-calculator.js"></script>
+</body>
+</html>
