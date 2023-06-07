@@ -34,7 +34,7 @@ DIE.src = "./assets/sound/sfx_die.wav";
 
 // game state
 
-const state = {
+const state = { // STATE
     current : 0,
     getReady : 0,
     game : 1,
@@ -48,23 +48,23 @@ const startBtn = {
     y : 263,
     w : 83,
     h : 29,
-}
+}// DÙNG GIÁ TRỊ TƯƠNG ĐỐI
 //Control the game
 
 cvs.addEventListener("click", function (event){
 
-    switch (state.current){
-        case state.getReady :
-            state.current = state.game;
-            SWOOSHING.play();
+    // switch (state.current){
+    //     case state.getReady :
+    //         state.current = state.game;
+    //         SWOOSHING.play();
          
-            break;
-        case state.game :
-            bird.flap();
-            FLAP.play();
+    //         break;
+    //     case state.game :
+    //         bird.flap();
+    //         FLAP.play();
 
-            break;
-        case state.over :
+    //         break;
+        // case state.over :
             let rect = cvs.getBoundingClientRect(); // DOMRect, chứa thông tin về kích thước và vị trí của một phần tử DOM trong khung nhìn (viewport).
             let clickX = event.clientX - rect.left;
             let clickY = event.clientY - rect.top;
@@ -72,16 +72,16 @@ cvs.addEventListener("click", function (event){
             // Kiểm tra khi chọn start
 
             if(clickX >= startBtn.x && clickX  <= startBtn.x + startBtn.w && clickY 
-                >= startBtn.y && clickY <= startBtn.y + startBtn.h){
+                >= startBtn.y && clickY <= startBtn.y + startBtn.h){ // TÁCH RA THÀNH BIẾN 
                 pipes.reset();
                 bird.speedReset();
                 score.reset();
             state.current = state.getReady;
             }
-            break;
+            // break;
 
 
-    }
+    // }
 });
 
 //load background img
@@ -109,7 +109,7 @@ const foreground = {
     h : 112,
     x : 0,
     y : cvs.height - 112,
-    dx : 2,
+    dx : 4,
 
 
     draw : function(){
@@ -143,7 +143,7 @@ const bird = {
     frame : 0,
 
     gravity : 0.25, // trọng lực
-    jump : 4, //nhảy
+    jump : 4.2, //nhảy
     speed : 0 , //tốc độ
     rotation : 0 , // độ góc
 
@@ -175,7 +175,7 @@ const bird = {
         this.frame = this.frame%this.animation.length;
 
         if(state.current == state.getReady){
-            this.y = 150 ; // vị trí bird khi game over
+            this.y = 150 ; // 
             this.rotation = 0 * DEGREE;
 
         }else {
@@ -270,7 +270,7 @@ const pipes = {
     },
     w: 53,
     h: 400 ,
-    gap :85,
+    gap :100,
     maxYPos: -150,
     dx : 2,
 
@@ -302,19 +302,6 @@ const pipes = {
             let p = this.position [i];
             p.x -= this.dx;
 
-            // let bottomPipeYPos = p.x + this.h + this.gap;
-
-            //Phát hiện va  chạm 
-            // if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.w
-            //     && 
-            //     bird.y + bird.radius > p.y && bird.y - bird.radius < p.y + this.h){
-            //         state.current = state.over;
-            //     }
-            // if (bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.w
-            //     && 
-            //     bird.y + bird.radius > bottomPipeYPos && bird.y - bird.radius < bottomPipeYPos + this.h){
-            //         state.current = state.over;
-            //     }
             if ((bird.x + bird.radius > p.x && bird.x - bird.radius < p.x + this.w)
             && 
             ((bird.y - bird.radius < p.y + this.h) || (bird.y + bird.radius > p.y + this.h + this.gap))){
@@ -374,6 +361,40 @@ const score = {
         this.value = 0;
     }
 }
+//medal 
+const medals = {
+    sX: 360,
+    sY: [112, 159],
+    sW: 42,
+    sH: 42,
+    cX: cvs.width / 2 - 25,
+    cY: 207,
+    cW: 42,
+    cH: 42,
+    i: 0,
+
+
+    draw: function() {
+        if (state.current == state.over) {
+            ctx.drawImage(sprite, this.sX, this.sY[this.i], this.sW, this.sH, this.cX, this.cY, this.cW, this.cH);
+        }
+    },
+
+    update: function() {
+        if (state.current == state.over) {
+            if (score.value === 0) {
+                this.i = 2;
+            } else if (score.value === score.best) {
+                this.i = 1;
+            } else if (score.value >= score.best / 2 && score.value < score.best) {
+                this.i = 0;
+            } else {
+                this.i = 2;
+            }
+
+        }
+    }
+};
 
 //draw
 function draw() {
@@ -387,17 +408,22 @@ function draw() {
     getReady.draw();
     gameOver.draw();
     score.draw();
+    medals.draw();
 
 }
+//medal
+
 
 //update
 function update(){
     bird.update ();
     foreground.update ();
     pipes.update ();
+    medals.update();
 
 
 }
+
 //loop
 function loop(){
         update();
