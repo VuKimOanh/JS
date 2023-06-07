@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current</title>
+    <style>
+        #currencyForm{
+            width: 700px; 
+            height: 250px;
+            background-color: #F8CECC;
+            border: 1px solid #B85450;
+            margin: auto;
+
+        }
+        .mb-3 {
+            margin: 20px;
+            float: left;
+        }
+        button {
+          margin: auto;
+        }
+        h1{
+          text-align: center;
+        }   
+        .btn-primary{
+            margin: 20px auto;
+            margin-left: 50px;
+            width:200px;
+            height: 30px;
+            background-color: #a53a35;
+            border: 1px solid #B85450;
+            color: white;
+        }
+        input.form-control,
+        select.form-select{
+        width:100px;
+        }
+  
+    </style>
+</head>
+<body>
+      <form id="currencyForm">
+        <h1>Currency Converter</h1>
+        <div class="mb-3">
+          <label for="amount" class="form-label">Amount</label>
+          <input type="number" class="form-control" id="amount" placeholder="Enter amount" name="amount">
+        </div>
+        <div class="mb-3">
+          <label for="fromCurrency" class="form-label">From Currency</label>
+          <select class="form-select" id="fromCurrency" name="fromCurrency">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+            <!-- Thêm các tùy chọn khác -->
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="toCurrency" class="form-label">To Currency</label>
+          <select class="form-select" id="toCurrency" name="toCurrency">
+            <option value="USD">USD</option>
+            <option value="VND">VND</option>
+            <!-- Thêm các tùy chọn khác -->
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Convert</button>
+        <div id="result"></div>
+      </form>
+
+
+
+    <script>
+            // Đăng ký sự kiện submit của form
+        document.getElementById("currencyForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // Ngăn chặn việc gửi form đi
+
+          // Lấy giá trị từ form
+          var amount = parseFloat(document.getElementById("amount").value);
+          var fromCurrency = document.getElementById("fromCurrency").value;
+          var toCurrency = document.getElementById("toCurrency").value;
+
+          // Gọi hàm chuyển đổi tiền
+          var convertedAmount = convertCurrency(amount, fromCurrency, toCurrency);
+
+          // Hiển thị kết quả
+          document.getElementById("result").innerHTML = "Giá trị " + amount + " " + fromCurrency + " = " + convertedAmount + " " + toCurrency;
+        });
+
+        // Hàm chuyển đổi tiền tệ
+        function convertCurrency(amount, fromCurrency, toCurrency) {
+          // Thực hiện các phép tính chuyển đổi tại đây
+          // Ví dụ: 1 USD = 23000 VND
+          if (fromCurrency === "USD" && toCurrency === "VND") {
+            return amount * 23000;
+          } else if (fromCurrency === "VND" && toCurrency === "USD") {
+            return amount / 23000;
+          } else {
+            return "Unsupported conversion";
+          }
+        }
+    </script>
+</body>
+</html>
