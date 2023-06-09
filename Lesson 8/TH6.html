@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <button type='button' id="view-number" onclick="calculateDays()">Chơi</button>
+    <div id="result"></div>
+
+    <script>
+        function calculateDays() {
+            let minNumber;
+            let maxNumber;
+            let number = 100; 
+            let randomNumber = Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
+            for (let i = 0; i < 3; i++) { 
+                do {
+                    numberMin = parseInt(prompt("Nhập vào số đầu tiên trong khoảng:"));
+                    numberMax = parseInt(prompt("Nhập vào số lớn nhất trong khoảng:"));
+                } while (number === randomNumber); 
+
+                alert("Chúc mừng bạn đã đoán chúng!");
+            }
+            alert("Hết lượt!");
+
+            let resultElement = document.getElementById("result");
+        }
+    </script>
+</body>
+</html>
